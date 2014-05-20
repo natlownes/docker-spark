@@ -10,6 +10,4 @@ RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-0.9.1.tgz
 RUN tar -xzf spark-0.9.1.tgz
 RUN cd spark-0.9.1 && ./sbt/sbt assembly
 
-ENTRYPOINT ["/spark/spark-0.9.1/bin/spark-class org.apache.spark.deploy.worker.Worker"] 
-
-# docker run -t -i narf/spark:latest "spark://192.168.11.6:7077"
+ENTRYPOINT ["/spark/spark-0.9.1/bin/spark-class", "org.apache.spark.deploy.worker.Worker"] 
